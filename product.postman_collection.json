@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "4a09f759-1aab-49fc-811b-8e811235bc57",
+		"name": "product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/sign-up/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"username5\",\n\t\"password\":\"password\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/sign-up/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sign-up",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/login/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "username5",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/product/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "vaceline",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "100.25",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "11",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/products/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/product/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/products/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/ratings/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/ratings/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ratings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/ratings/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "product",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "8.4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/ratings/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ratings",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
