@@ -11,6 +11,9 @@ from django.views.decorators.csrf import csrf_exempt
 from product_app.models import Product, UserRating
 from product_app.serializer import ProductSerializer, RatingSerializer
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authtoken.models import Token
+from rest_framework.authentication import TokenAuthentication
 # Create your views here.
 
 def new_post(request):
@@ -66,6 +69,8 @@ class LoginView(generics.CreateAPIView):
                 data['username'] = user.username	
                 data['first_name'] = user.first_name	
                 data['last_name'] = user.last_name
+                token, created = Token.objects.get_or_create(user=user)
+                data['token'] = token.key
                 return Response(data=data, )
 
             else:
@@ -78,7 +83,7 @@ class LoginView(generics.CreateAPIView):
         else:
             return Response(
                 data={
-                    "message": "username  and password not matches"
+                    "message": "username and password not matches"
                 },
                 status=status.HTTP_400_BAD_REQUEST
             )
@@ -88,6 +93,8 @@ class ProductList(APIView):
 #     """
 #     List all snippets, or create a new snippet.
 #     """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     def get(self, request, format=None):
